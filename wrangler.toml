@@ -14,7 +14,7 @@ new_sqlite_classes = ["CantripEntity"]
 [[d1_databases]]
 binding = "LOOM_DB"
 database_name = "cantrip-loom"
-database_id = "YOUR_DATABASE_ID_HERE"  # replace after: wrangler d1 create cantrip-loom
+database_id = "0138e6eb-fa5f-453b-90eb-3a1bceee7cf5"
 
 [ai]
 binding = "AI"
