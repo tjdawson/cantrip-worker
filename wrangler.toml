@@ -1,0 +1,29 @@
+name = "cantrip-worker"
+main = "src/index.ts"
+compatibility_date = "2026-03-24"
+compatibility_flags = ["nodejs_compat"]
+
+[[durable_objects.bindings]]
+name = "CANTRIP_ENTITY"
+class_name = "CantripEntity"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["CantripEntity"]
+
+[[d1_databases]]
+binding = "LOOM_DB"
+database_name = "cantrip-loom"
+database_id = "YOUR_DATABASE_ID_HERE"  # replace after: wrangler d1 create cantrip-loom
+
+[ai]
+binding = "AI"
+
+[vars]
+MAX_TURNS_DEFAULT = "20"
+ALLOWED_ORIGIN = ""  # Set to your frontend origin, e.g. "https://yourdomain.com"
+                     # Leave empty to block all cross-origin requests
+# Model is set in code as @cf/moonshotai/kimi-k2.5 — no extra API key needed
+
+# Secrets (set via CLI, never commit these values):
+#   wrangler secret put API_SECRET
